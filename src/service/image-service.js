@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_KEY = '';
+const API_KEY = '563492ad6f9170000100000145a0bdf3467e4f8fbd7fec0694446ed4';
 axios.defaults.baseURL = 'https://api.pexels.com/v1/';
 axios.defaults.headers.common['Authorization'] = API_KEY;
 axios.defaults.params = {
@@ -8,4 +8,6 @@ axios.defaults.params = {
   per_page: 15,
 };
 
-export const getImages = (query, page) => {};
+export const getImages = async (query, page) => {
+  return await axios.get(`search?query=${query}&page=${page}`);
+};
